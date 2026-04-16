@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Project outputs and sensitive artifacts
+data/raw/*
+data/interim/*
+data/processed/*
+reports/figures/*
+reports/*.csv
+reports/*.html
+reports/*.pdf
+
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!reports/figures/.gitkeep
+!data/README.md
+
+# macOS
+.DS_Store
