@@ -27,8 +27,10 @@ reports/*.html
 reports/*.pdf
 
 !data/raw/.gitkeep
+!data/raw/example_network_events.csv
 !data/interim/.gitkeep
 !data/processed/.gitkeep
+!data/processed/features.csv
 !reports/figures/.gitkeep
 !data/README.md
 

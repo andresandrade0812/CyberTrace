@@ -21,11 +21,24 @@ How can clustering and comparative analysis help identify patterns in suspicious
 ## Milestones
 
 - Repository scaffold and Python environment.
-- Safe dataset selection and artifact inventory.
+- Safe starter dataset selection and artifact inventory.
 - Feature extraction notebook or script.
-- Baseline clustering experiments.
+- Baseline clustering experiments with `data/processed/features.csv`.
 - Cluster interpretation with tables and figures.
 - Final report and presentation.
+
+## Current Starter Dataset
+
+The project currently includes a small synthetic feature table at `data/processed/features.csv`.
+It contains benign, suspicious, and malicious-like network behavior examples. These rows are
+not real malware traffic; they are safe placeholders for testing the analysis pipeline.
+
+The project also includes `data/raw/example_network_events.csv`, a tiny safe event log that can
+be converted into features with:
+
+```bash
+cybertrace extract-network-log data/raw/example_network_events.csv --output data/processed/features_from_logs.csv
+```
 
 ## Safety Rules
 
