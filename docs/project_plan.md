@@ -40,6 +40,37 @@ be converted into features with:
 cybertrace extract-network-log data/raw/example_network_events.csv --output data/processed/features_from_logs.csv
 ```
 
+## Real Dataset Milestone
+
+The first real dataset is a small NSL-KDD training CSV sample stored at
+`data/raw/nsl_kdd_small_training.csv`. It was downloaded from the `Small Training Set.csv`
+file in the `Jehuty4949/NSL_KDD` GitHub mirror and is based on the NSL-KDD benchmark
+described by the Canadian Institute for Cybersecurity. It is prepared with:
+
+```bash
+cybertrace prepare-nsl-kdd data/raw/nsl_kdd_small_training.csv --output data/processed/features_nsl_kdd.csv
+```
+
+The prepared dataset contains 1,011 records:
+
+- 516 benign records
+- 495 malicious records
+
+Baseline clustering is run with:
+
+```bash
+cybertrace cluster data/processed/features_nsl_kdd.csv --output reports/real_clusters.csv --clusters 3
+```
+
+Current baseline cluster mix:
+
+- Cluster 0: 493 benign, 95 malicious
+- Cluster 1: 23 benign, 109 malicious
+- Cluster 2: 0 benign, 291 malicious
+
+This gives the final report a clear starting interpretation: one cluster is mostly benign, one
+is mixed but malicious-heavy, and one is fully malicious in this sample.
+
 ## Safety Rules
 
 - Use only controlled, course-appropriate artifacts.

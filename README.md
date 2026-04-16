@@ -64,6 +64,24 @@ cybertrace cluster data/processed/features_from_logs.csv --output reports/exampl
 
 The starter `data/processed/features.csv` file is synthetic and safe. It exists so the analysis workflow can be tested before real course-approved artifacts are selected.
 
+Prepare the included NSL-KDD benchmark sample:
+
+```bash
+cybertrace prepare-nsl-kdd data/raw/nsl_kdd_small_training.csv --output data/processed/features_nsl_kdd.csv
+```
+
+Run clustering on the prepared NSL-KDD feature table:
+
+```bash
+cybertrace cluster data/processed/features_nsl_kdd.csv --output reports/real_clusters.csv --clusters 3
+```
+
+The real-data summary is written to `reports/real_dataset_analysis.md`, and the generated cluster projection is saved at `reports/figures/nsl_kdd_clusters.png`.
+
+## Dataset Source
+
+The first real-data milestone uses a small public NSL-KDD CSV sample downloaded from the `Small Training Set.csv` file in the [Jehuty4949/NSL_KDD GitHub mirror](https://github.com/Jehuty4949/NSL_KDD). The benchmark is described by the Canadian Institute for Cybersecurity on the [ISCX NSL-KDD dataset page](https://www.unb.ca/cic/datasets/nsl.html). NSL-KDD is an older but safe intrusion-detection benchmark derived from KDD-style network connection records. It is useful for this course project because it provides labeled benign and attack traffic records without requiring live malware handling.
+
 ## Safety Note
 
 This repository is designed for analysis of safe, controlled artifacts. Do not store live malware, credentials, private network captures, or sensitive production data in the repo.

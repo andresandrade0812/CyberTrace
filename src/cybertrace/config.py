@@ -15,6 +15,8 @@ DEFAULT_CLUSTER_COUNT = 3
 NON_FEATURE_COLUMNS = {
     "sample_id",
     "label",
+    "attack_type",
+    "difficulty",
     "family",
     "source",
     "filename",

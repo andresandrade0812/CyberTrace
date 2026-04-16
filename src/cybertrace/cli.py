@@ -11,6 +11,7 @@ from rich.table import Table
 
 from cybertrace.clustering import cluster_features, summarize_clusters
 from cybertrace.config import DEFAULT_CLUSTER_COUNT, DEFAULT_ID_COLUMN
+from cybertrace.datasets import prepare_nsl_kdd_dataset
 from cybertrace.extractors import extract_network_log_features
 from cybertrace.features import load_feature_table
 
@@ -62,6 +63,31 @@ def extract_network_log(
 
     features = extract_network_log_features(input_csv, output)
     console.print(f"Extracted {len(features)} samples to [bold]{output}[/bold]")
+
+
+@app.command()
+def prepare_nsl_kdd(
+    input_csv: Annotated[Path, typer.Argument(help="Raw NSL-KDD CSV file.")],
+    output: Annotated[
+        Path, typer.Option("--output", "-o", help="Where to write prepared features.")
+    ] = Path("data/processed/features_nsl_kdd.csv"),
+    max_rows: Annotated[
+        int | None, typer.Option("--max-rows", help="Limit rows for quick experiments.")
+    ] = None,
+) -> None:
+    """Prepare NSL-KDD records as a CyberTrace feature table."""
+
+    features = prepare_nsl_kdd_dataset(input_csv, output, max_rows=max_rows)
+    label_counts = features["label"].value_counts().sort_index()
+
+    display = Table(title="Prepared NSL-KDD Dataset")
+    display.add_column("Label")
+    display.add_column("Rows", justify="right")
+    for label, count in label_counts.items():
+        display.add_row(label, str(count))
+
+    console.print(display)
+    console.print(f"Wrote {len(features)} prepared rows to [bold]{output}[/bold]")
 
 
 if __name__ == "__main__":

@@ -28,10 +28,14 @@ reports/*.pdf
 
 !data/raw/.gitkeep
 !data/raw/example_network_events.csv
+!data/raw/nsl_kdd_small_training.csv
 !data/interim/.gitkeep
 !data/processed/.gitkeep
 !data/processed/features.csv
+!data/processed/features_nsl_kdd.csv
 !reports/figures/.gitkeep
+!reports/figures/nsl_kdd_clusters.png
+!reports/real_clusters.csv
 !data/README.md
 
 # macOS
