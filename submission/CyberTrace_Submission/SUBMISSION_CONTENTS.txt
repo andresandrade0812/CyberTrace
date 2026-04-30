@@ -1,0 +1,9 @@
+CyberTrace submission package
+
+Included items:
+- Final report (deliverables/final_report.md and .docx)
+- Presentation slides (deliverables/final_presentation.pptx)
+- Source code (src/)
+- Data (data/raw and data/processed)
+- Results and figures (reports/)
+- Notebooks (notebooks/)

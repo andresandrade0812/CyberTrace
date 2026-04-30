@@ -1,0 +1,4 @@
+sample_id,label,source,connection_count,unique_destinations,unique_ports,avg_packet_size,packet_size_std,tcp_ratio,udp_ratio,dns_query_count,http_request_count,failed_connection_ratio,beacon_score,bytes_out_ratio,duration_seconds
+benign_demo,unknown,example_network_events.csv,4,4,2,432.5,220.964,0.75,0.25,1,3,0.0,0.603,0.514,19
+malicious_demo,unknown,example_network_events.csv,4,1,1,158.5,1.291,1.0,0.0,4,0,1.0,1.0,0.946,45
+suspicious_demo,unknown,example_network_events.csv,4,1,1,207.25,2.217,1.0,0.0,4,0,0.5,1.0,0.85,90

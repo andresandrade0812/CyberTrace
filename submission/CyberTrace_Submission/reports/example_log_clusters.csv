@@ -1,0 +1,4 @@
+sample_id,label,source,cluster
+benign_demo,unknown,example_network_events.csv,1
+malicious_demo,unknown,example_network_events.csv,0
+suspicious_demo,unknown,example_network_events.csv,2
