@@ -246,6 +246,20 @@ def render_report_markdown(summary: dict[str, object]) -> str:
         "patterns, and suspicious concentration, rather than presenting the clusters as unexplained black",
         "box outputs.",
         "",
+        "Another methodological point is the choice to keep the workflow simple enough to inspect end to",
+        "end. A more complex model or feature-engineering pipeline might produce different outputs, but it",
+        "would also make the final project harder to explain. For this assignment, interpretability and",
+        "clarity were treated as design constraints. That is why the project prefers a direct preparation",
+        "step, standardized numeric features, and an unsupervised model that can be described cleanly in",
+        "both code and prose.",
+        "",
+        "This also affects how the results should be read. The clusters are not presented as final truths",
+        "about attack behavior. They are analytical groupings produced under a specific feature design and",
+        "specific clustering choice. Their value lies in how well they support comparison and reasoning, not",
+        "in the claim that they are the only valid partition of the data. That distinction is important in",
+        "cybersecurity, where useful investigation often depends on creating workable structure rather than",
+        "finding one perfectly correct answer.",
+        "",
         "## 6. Implementation",
         "",
         "CyberTrace is implemented as a Python package under `src/cybertrace/`. The main commands are:",
@@ -346,6 +360,12 @@ def render_report_markdown(summary: dict[str, object]) -> str:
         "looking pattern is malicious and that not every benign record is behaviorally simple. In practice,",
         "that is why analysts need both grouping methods and contextual judgment.",
         "",
+        "Taken together, the results suggest that clustering is most valuable here as an organizational aid.",
+        "It helps reveal where the data is strongly separable and where it is not. Strongly separable regions",
+        "can help identify concentrated suspicious behavior quickly, while mixed regions indicate where more",
+        "careful investigation or additional evidence is required. In other words, the output is useful not",
+        "only for what it separates, but also for what it leaves ambiguous.",
+        "",
         "An important takeaway is that clustering did not create a perfect benign-versus-malicious split,",
         "and that is actually useful to discuss. Unsupervised methods group by similarity, so mixed",
         "clusters highlight where suspicious and benign records share overlapping characteristics. That",
@@ -383,6 +403,12 @@ def render_report_markdown(summary: dict[str, object]) -> str:
         "to known labels after the fact, and then translate those groups into plain-language cybersecurity",
         "insights. That pattern is portable and can be reused on other safe datasets or more advanced future",
         "versions of the project.",
+        "",
+        "A final implication is that cybersecurity education benefits from projects that combine technical",
+        "implementation with interpretive responsibility. It is one thing to produce a cluster assignment",
+        "file. It is another to explain what the clusters suggest, what they fail to capture, and why an",
+        "analyst should trust or question the result. CyberTrace is strongest where it treats those tasks as",
+        "part of the same project rather than as separate concerns.",
         "",
         "## 9. Group Members and Contributions",
             "",
@@ -777,6 +803,25 @@ def build_report_docx(summary: dict[str, object], output_path: Path) -> None:
         "The project is also practically reusable. Although the final implementation focuses on "
         "NSL-KDD, the repository structure can be extended to other safe datasets such as flow logs, "
         "packet-derived features, Zeek outputs, or Suricata alerts."
+    )
+
+    add_heading(document, "Lessons Learned")
+    document.add_paragraph(
+        "One lesson from the project is that clean project structure matters almost as much as the "
+        "clustering result itself. Once the data preparation, model execution, reporting, and tests "
+        "were organized into clear modules, it became much easier to reason about the analysis and "
+        "to regenerate the final outputs reliably."
+    )
+    document.add_paragraph(
+        "A second lesson is that mixed results are still meaningful results. The presence of a mixed "
+        "malicious-heavy cluster does not weaken the project; instead, it highlights the fact that "
+        "real cybersecurity analysis often lives in gray areas rather than in perfect separations."
+    )
+    document.add_paragraph(
+        "A third lesson is that packaging matters. Turning the project into a final report, slide deck, "
+        "and submission archive forced the workflow to become more reproducible and more communicable. "
+        "That is a valuable outcome on its own because strong cybersecurity work has to be explainable "
+        "to other people, not just runnable by its original author."
     )
 
     add_heading(document, "Conclusion")
