@@ -25,6 +25,15 @@ CyberTrace/
 └── tests/            # Unit tests for reusable code.
 ```
 
+## Submission Files
+
+- Final report: `deliverables/final_report.docx`
+- Presentation slides: `deliverables/final_presentation.pptx`
+- Source code: `src/`
+- Data: `data/raw/` and `data/processed/`
+- Analysis outputs and figures: `reports/`
+- Exploratory notebooks: `notebooks/`
+
 ## Quick Start
 
 Create a virtual environment and install the project in editable mode:
