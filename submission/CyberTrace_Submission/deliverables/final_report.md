@@ -303,15 +303,15 @@ The project was completed by Victor Andrade and Ben Miller.
 
 ### Victor Andrade
 
-- Implemented the Python repository structure and CLI commands.
-- Added dataset preparation, clustering, tests, notebooks, and deliverable packaging.
-- Integrated the real dataset outputs and final submission materials.
+- Worked jointly on planning, implementation, analysis, and final deliverables.
+- Shared responsibility for the Python workflow, dataset preparation, clustering, testing, and reporting.
+- Collaborated equally on interpreting results, preparing the presentation, and packaging the submission.
 
 ### Ben Miller
 
-- Helped shape the cybersecurity framing of the project.
-- Contributed to the problem definition, motivation, and interpretation goals.
-- Supported the final explanation of findings, implications, and future directions.
+- Worked jointly on planning, implementation, analysis, and final deliverables.
+- Shared responsibility for the Python workflow, dataset preparation, clustering, testing, and reporting.
+- Collaborated equally on interpreting results, preparing the presentation, and packaging the submission.
 
 These contribution descriptions are meant to make the division of work visible in the final
 submission rather than leaving the project to appear as a single undifferentiated artifact. If

@@ -27,17 +27,17 @@ GROUP_MEMBERS = [
     (
         "Victor Andrade",
         [
-            "Set up the Python project structure and CLI workflow.",
-            "Implemented dataset preparation, clustering, tests, and packaging scripts.",
-            "Integrated the real dataset analysis outputs, figures, and submission materials.",
+            "Worked jointly on the project planning, implementation, analysis, and final deliverables.",
+            "Shared responsibility for the Python workflow, dataset preparation, clustering, testing, and reporting.",
+            "Collaborated equally on interpreting results, preparing the presentation, and packaging the submission.",
         ],
     ),
     (
         "Ben Miller",
         [
-            "Helped shape the project direction around cybersecurity investigation.",
-            "Contributed to the problem framing, motivation, and interpretation goals.",
-            "Supported the final narrative about findings, implications, and future work.",
+            "Worked jointly on the project planning, implementation, analysis, and final deliverables.",
+            "Shared responsibility for the Python workflow, dataset preparation, clustering, testing, and reporting.",
+            "Collaborated equally on interpreting results, preparing the presentation, and packaging the submission.",
         ],
     ),
 ]
@@ -414,17 +414,17 @@ def render_report_markdown(summary: dict[str, object]) -> str:
             "",
             "The project was completed by Victor Andrade and Ben Miller.",
             "",
-            "### Victor Andrade",
-            "",
-            "- Implemented the Python repository structure and CLI commands.",
-            "- Added dataset preparation, clustering, tests, notebooks, and deliverable packaging.",
-            "- Integrated the real dataset outputs and final submission materials.",
-            "",
-            "### Ben Miller",
-            "",
-            "- Helped shape the cybersecurity framing of the project.",
-            "- Contributed to the problem definition, motivation, and interpretation goals.",
-        "- Supported the final explanation of findings, implications, and future directions.",
+        "### Victor Andrade",
+        "",
+        "- Worked jointly on planning, implementation, analysis, and final deliverables.",
+        "- Shared responsibility for the Python workflow, dataset preparation, clustering, testing, and reporting.",
+        "- Collaborated equally on interpreting results, preparing the presentation, and packaging the submission.",
+        "",
+        "### Ben Miller",
+        "",
+        "- Worked jointly on planning, implementation, analysis, and final deliverables.",
+        "- Shared responsibility for the Python workflow, dataset preparation, clustering, testing, and reporting.",
+        "- Collaborated equally on interpreting results, preparing the presentation, and packaging the submission.",
         "",
         "These contribution descriptions are meant to make the division of work visible in the final",
         "submission rather than leaving the project to appear as a single undifferentiated artifact. If",
@@ -753,8 +753,8 @@ def build_report_docx(summary: dict[str, object], output_path: Path) -> None:
             paragraph = document.add_paragraph(contribution, style="List Bullet 2")
             paragraph.paragraph_format.left_indent = Inches(0.5)
     document.add_paragraph(
-        "This section is included to make individual effort visible in the final submission instead "
-        "of treating the entire project as a single anonymous artifact."
+        "The contribution split is intentionally even. Both group members worked on the project "
+        "together across planning, coding, analysis, interpretation, and final submission materials."
     )
 
     add_heading(document, "Limitations")
@@ -946,8 +946,8 @@ def build_presentation(summary: dict[str, object], output_path: Path) -> None:
         prs,
         "Group Members",
         [
-            "Victor Andrade: implementation, CLI workflow, tests, packaging, and analysis integration",
-            "Ben Miller: cybersecurity framing, project direction, interpretation goals, and final narrative support",
+            "Victor Andrade and Ben Miller worked on the project together from start to finish.",
+            "The work was divided evenly across planning, implementation, analysis, reporting, and presentation.",
         ],
     )
     add_bullet_slide(
